@@ -378,25 +378,33 @@ def build_local_plugins(force: bool = False, skip_build: bool = False) -> list[s
 
         try:
             # Run npm install (use public registry to avoid corporate proxy issues)
+            log("Running npm install ...")
             result = subprocess.run(
                 ["npm", "install", "--registry", "https://registry.npmmirror.com"],
                 cwd=source_dir,
-                capture_output=True,
                 text=True,
                 timeout=BUILD_TIMEOUT,
                 shell=(os.name == "nt"),  # Windows needs shell=True for npm
             )
             if result.returncode != 0:
-                log_error(f"npm install failed:\n{result.stderr}")
+                log_error("npm install failed (exit code {}).".format(result.returncode))
+                _diagnose_npm_error(source_dir)
+                continue
+
+            # Verify node_modules was created
+            node_modules_dir = os.path.join(source_dir, "node_modules")
+            if not os.path.isdir(node_modules_dir):
+                log_error("npm install completed but node_modules/ was not created.")
+                _diagnose_npm_error(source_dir)
                 continue
 
             # Try npm run build first; fall back to node esbuild.config.mjs
             # (npm run build can fail on Windows when MacType's package.json
             #  sits on the PATH and confuses npm's config resolution)
+            log("Running npm run build ...")
             result = subprocess.run(
                 ["npm", "run", "build"],
                 cwd=source_dir,
-                capture_output=True,
                 text=True,
                 timeout=BUILD_TIMEOUT,
                 shell=(os.name == "nt"),
@@ -408,13 +416,12 @@ def build_local_plugins(force: bool = False, skip_build: bool = False) -> list[s
                     result = subprocess.run(
                         ["node", "esbuild.config.mjs", "production"],
                         cwd=source_dir,
-                        capture_output=True,
                         text=True,
                         timeout=BUILD_TIMEOUT,
                         shell=(os.name == "nt"),
                     )
                 if result.returncode != 0:
-                    log_error(f"Build failed:\n{result.stderr}")
+                    log_error("Build failed (exit code {}).".format(result.returncode))
                     continue
 
             log("Build completed.")
@@ -447,6 +454,21 @@ def _verify_plugin_files(plugin_dir: str, critical_files: list[str]) -> bool:
         if not verify_file_integrity(fpath, min_size=10):
             return False
     return True
+
+
+def _diagnose_npm_error(source_dir: str) -> None:
+    """Print diagnostic hints for common npm install failures."""
+    print()
+    print("  Possible causes:")
+    print("    • Network issue — check your internet connection")
+    print("    • Corporate proxy/registry — your .npmrc may point to an internal registry")
+    print("    • Node.js not installed or not in PATH")
+    print()
+    print("  Try manually:")
+    print(f"    cd {normalize_path(source_dir)}")
+    print("    npm install --registry https://registry.npmmirror.com")
+    print("    npm run build")
+    print()
 
 
 # ---------------------------------------------------------------------------
