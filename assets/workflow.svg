@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Virgil:wght@400&amp;display=swap');
+      .hand { font-family: 'Virgil', 'Segoe UI', system-ui, sans-serif; }
+    </style>
+    <filter id="sketch" x="-1%" y="-1%" width="102%" height="102%">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <marker id="arrP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="380" rx="12" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="410" y="34" text-anchor="middle" class="hand" font-size="20" font-weight="bold" fill="#1f2937" filter="url(#sketch)">⚡ How It Works</text>
+
+  <!-- ====== Step 1: Clone ====== -->
+  <g filter="url(#sketch)">
+    <rect x="30" y="60" width="160" height="100" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="110" y="85" text-anchor="middle" class="hand" font-size="28">①</text>
+    <text x="110" y="108" text-anchor="middle" class="hand" font-size="14" font-weight="bold" fill="#15803d">Clone &amp; Setup</text>
+    <text x="110" y="128" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">git clone</text>
+    <text x="110" y="143" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">python setup.py</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="190" y1="110" x2="230" y2="110" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- ====== Step 2: Open Vault ====== -->
+  <g filter="url(#sketch)">
+    <rect x="235" y="60" width="160" height="100" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="315" y="85" text-anchor="middle" class="hand" font-size="28">②</text>
+    <text x="315" y="108" text-anchor="middle" class="hand" font-size="14" font-weight="bold" fill="#1d4ed8">Open in Obsidian</text>
+    <text x="315" y="128" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">Enable plugins</text>
+    <text x="315" y="143" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">Start exploring</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="395" y1="110" x2="435" y2="110" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- ====== Step 3: Organize ====== -->
+  <g filter="url(#sketch)">
+    <rect x="440" y="60" width="160" height="100" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="520" y="85" text-anchor="middle" class="hand" font-size="28">③</text>
+    <text x="520" y="108" text-anchor="middle" class="hand" font-size="14" font-weight="bold" fill="#6d28d9">Organize</text>
+    <text x="520" y="128" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">Color folders</text>
+    <text x="520" y="143" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">Clip web pages</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="600" y1="110" x2="640" y2="110" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- ====== Step 4: Connect Agents ====== -->
+  <g filter="url(#sketch)">
+    <rect x="645" y="60" width="145" height="100" rx="12" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
+    <text x="718" y="85" text-anchor="middle" class="hand" font-size="28">④</text>
+    <text x="718" y="108" text-anchor="middle" class="hand" font-size="14" font-weight="bold" fill="#be185d">Connect</text>
+    <text x="718" y="128" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">Mount repos</text>
+    <text x="718" y="143" text-anchor="middle" class="hand" font-size="11" fill="#6b7280">AI agents ready</text>
+  </g>
+
+  <!-- ====== Center Hub Diagram ====== -->
+  <!-- Central brain circle -->
+  <g filter="url(#sketch)">
+    <circle cx="410" cy="270" r="48" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2.5"/>
+    <text x="410" y="262" text-anchor="middle" class="hand" font-size="28">🧠</text>
+    <text x="410" y="285" text-anchor="middle" class="hand" font-size="12" font-weight="bold" fill="#6d28d9">Oh-My-Brain</text>
+    <text x="410" y="300" text-anchor="middle" class="hand" font-size="10" fill="#9ca3af">coordinator</text>
+  </g>
+
+  <!-- Satellite: Knowledge -->
+  <g filter="url(#sketch)">
+    <rect x="80" y="225" width="120" height="50" rx="10" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.8"/>
+    <text x="140" y="248" text-anchor="middle" class="hand" font-size="13" fill="#6d28d9">📚 Knowledge</text>
+    <text x="140" y="264" text-anchor="middle" class="hand" font-size="10" fill="#9ca3af">Brain/ + notes</text>
+  </g>
+  <line x1="200" y1="255" x2="362" y2="265" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrP)" filter="url(#sketch)"/>
+
+  <!-- Satellite: Web Clippings -->
+  <g filter="url(#sketch)">
+    <rect x="80" y="300" width="120" height="50" rx="10" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.8"/>
+    <text x="140" y="323" text-anchor="middle" class="hand" font-size="13" fill="#92400e">✂️ Clippings</text>
+    <text x="140" y="339" text-anchor="middle" class="hand" font-size="10" fill="#9ca3af">articles &amp; web</text>
+  </g>
+  <line x1="200" y1="320" x2="365" y2="285" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- Satellite: Agent A -->
+  <g filter="url(#sketch)">
+    <rect x="610" y="210" width="130" height="50" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+    <text x="675" y="233" text-anchor="middle" class="hand" font-size="13" fill="#1d4ed8">🤖 Agent A</text>
+    <text x="675" y="249" text-anchor="middle" class="hand" font-size="10" fill="#9ca3af">external repo</text>
+  </g>
+  <line x1="458" y1="258" x2="610" y2="240" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- Satellite: Agent B -->
+  <g filter="url(#sketch)">
+    <rect x="610" y="275" width="130" height="50" rx="10" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+    <text x="675" y="298" text-anchor="middle" class="hand" font-size="13" fill="#1d4ed8">🤖 Agent B</text>
+    <text x="675" y="314" text-anchor="middle" class="hand" font-size="10" fill="#9ca3af">external repo</text>
+  </g>
+  <line x1="458" y1="275" x2="610" y2="295" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- Satellite: Output -->
+  <g filter="url(#sketch)">
+    <rect x="325" y="340" width="120" height="40" rx="10" fill="#fce7f3" stroke="#f472b6" stroke-width="1.8"/>
+    <text x="385" y="365" text-anchor="middle" class="hand" font-size="13" fill="#be185d">📄 Output</text>
+  </g>
+  <line x1="400" y1="318" x2="390" y2="340" stroke="#f472b6" stroke-width="1.5" marker-end="url(#arr)" filter="url(#sketch)"/>
+
+  <!-- Satellite: Plugin -->
+  <g filter="url(#sketch)">
+    <rect x="475" y="340" width="120" height="40" rx="10" fill="#d1fae5" stroke="#34d399" stroke-width="1.8"/>
+    <text x="535" y="365" text-anchor="middle" class="hand" font-size="13" fill="#047857">🔌 Plugin</text>
+  </g>
+  <line x1="425" y1="315" x2="510" y2="340" stroke="#34d399" stroke-width="1.5" marker-end="url(#arr)" filter="url(#sketch)"/>
+</svg>

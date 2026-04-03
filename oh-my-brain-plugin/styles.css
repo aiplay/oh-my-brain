@@ -1,0 +1,86 @@
+/* ── Oh My Brain Plugin Styles ── */
+
+/* Modal */
+.omb-modal {
+  max-width: 620px;
+}
+.omb-modal h2 {
+  margin-bottom: 0.8em;
+}
+
+/* Color grid — used in FolderColorModal (full width) */
+.omb-color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* Color grid — inline variant used inside Setting controls */
+.omb-color-grid-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 240px;
+  margin-right: 8px;
+}
+
+/* Color preset button */
+.omb-color-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+  flex-shrink: 0;
+}
+.omb-color-btn:hover {
+  transform: scale(1.15);
+  border-color: var(--text-muted);
+}
+.omb-color-btn-active {
+  border-color: var(--text-normal) !important;
+  box-shadow: 0 0 0 2px var(--background-primary);
+}
+
+/* Preview */
+.omb-preview {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+.omb-preview-icon {
+  display: flex;
+  align-items: center;
+}
+.omb-preview-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.omb-preview-text {
+  font-weight: 500;
+}
+
+/* Button container */
+.omb-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Color dot in settings list */
+.omb-color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}

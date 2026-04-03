@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" width="820" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Virgil:wght@400&amp;display=swap');
+      .hand { font-family: 'Virgil', 'Segoe UI', system-ui, sans-serif; }
+      .label { font-size: 14px; fill: #374151; }
+      .title { font-size: 13px; font-weight: bold; }
+      .small { font-size: 11px; fill: #6b7280; }
+    </style>
+    <filter id="sketch" x="-1%" y="-1%" width="102%" height="102%">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="520" rx="12" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="410" y="36" text-anchor="middle" class="hand" font-size="20" font-weight="bold" fill="#1f2937" filter="url(#sketch)">🏗️ Vault Architecture</text>
+
+  <!-- ====== VAULT BOUNDARY ====== -->
+  <rect x="30" y="55" width="760" height="435" rx="14" fill="none" stroke="#d1d5db" stroke-width="2" stroke-dasharray="8,5" filter="url(#sketch)"/>
+  <text x="55" y="78" class="hand small" fill="#9ca3af" filter="url(#sketch)">oh-my-brain/ vault</text>
+
+  <!-- ====== Brain/ ====== -->
+  <g filter="url(#sketch)">
+    <rect x="60" y="95" width="200" height="110" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="100" y="118" class="hand title" fill="#6d28d9">🧠 Brain/</text>
+    <text x="80" y="140" class="hand small">SOUL.md — identity</text>
+    <text x="80" y="158" class="hand small">Memory.md — lessons</text>
+    <text x="80" y="176" class="hand small">Core knowledge files</text>
+    <rect x="68" y="185" width="50" height="12" rx="4" fill="#ede9fe" stroke="none"/>
+    <text x="72" y="195" class="hand" font-size="9" fill="#7c3aed">protected</text>
+  </g>
+
+  <!-- ====== Clippings/ ====== -->
+  <g filter="url(#sketch)">
+    <rect x="290" y="95" width="200" height="110" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <text x="330" y="118" class="hand title" fill="#b45309">✂️ Clippings/</text>
+    <text x="310" y="140" class="hand small">Web articles &amp; pages</text>
+    <text x="310" y="158" class="hand small">YAML frontmatter</text>
+    <text x="310" y="176" class="hand small">Browser → Vault</text>
+    <rect x="298" y="185" width="62" height="12" rx="4" fill="#fef3c7" stroke="none"/>
+    <text x="302" y="195" class="hand" font-size="9" fill="#92400e">auto-tagged</text>
+  </g>
+
+  <!-- ====== Skills/ ====== -->
+  <g filter="url(#sketch)">
+    <rect x="520" y="95" width="200" height="110" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <text x="560" y="118" class="hand title" fill="#047857">⚡ Skills/</text>
+    <text x="540" y="140" class="hand small">Workspace skills</text>
+    <text x="540" y="158" class="hand small">On-demand loading</text>
+    <text x="540" y="176" class="hand small">Extensible capabilities</text>
+    <rect x="528" y="185" width="55" height="12" rx="4" fill="#d1fae5" stroke="none"/>
+    <text x="532" y="195" class="hand" font-size="9" fill="#065f46">pluggable</text>
+  </g>
+
+  <!-- ====== Agents/ ====== -->
+  <g filter="url(#sketch)">
+    <rect x="60" y="235" width="340" height="135" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="258" class="hand title" fill="#1d4ed8">🤖 Agents/</text>
+    <text x="80" y="278" class="hand small">Multi-agent workspace orchestration</text>
+
+    <!-- Sub-agent boxes -->
+    <rect x="80" y="290" width="95" height="60" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="90" y="310" class="hand" font-size="11" fill="#1e40af">project-a/</text>
+    <text x="86" y="328" class="hand" font-size="9" fill="#6b7280">CLAUDE.md →</text>
+    <text x="86" y="340" class="hand" font-size="9" fill="#6b7280">symlink</text>
+
+    <rect x="190" y="290" width="95" height="60" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="200" y="310" class="hand" font-size="11" fill="#1e40af">project-b/</text>
+    <text x="196" y="328" class="hand" font-size="9" fill="#6b7280">CLAUDE.md →</text>
+    <text x="196" y="340" class="hand" font-size="9" fill="#6b7280">symlink</text>
+
+    <rect x="300" y="290" width="85" height="60" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <text x="325" y="325" text-anchor="middle" class="hand" font-size="20" fill="#93c5fd">...</text>
+  </g>
+
+  <!-- ====== Output/ ====== -->
+  <g filter="url(#sketch)">
+    <rect x="430" y="235" width="170" height="135" rx="10" fill="#fdf2f8" stroke="#ec4899" stroke-width="2"/>
+    <text x="465" y="258" class="hand title" fill="#be185d">📄 Output/</text>
+    <text x="448" y="280" class="hand small">Reports (.md)</text>
+    <text x="448" y="298" class="hand small">Slides (Marp)</text>
+    <text x="448" y="316" class="hand small">Charts (.png/.svg)</text>
+    <rect x="438" y="345" width="60" height="12" rx="4" fill="#fce7f3" stroke="none"/>
+    <text x="442" y="355" class="hand" font-size="9" fill="#9d174d">write-free</text>
+  </g>
+
+  <!-- ====== Plugin ====== -->
+  <g filter="url(#sketch)">
+    <rect x="630" y="235" width="145" height="135" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+    <text x="646" y="258" class="hand title" fill="#15803d">🔌 Plugin</text>
+    <text x="646" y="280" class="hand small">Folder coloring</text>
+    <text x="646" y="298" class="hand small">Agent manager</text>
+    <text x="646" y="316" class="hand small">CLAUDE.md link</text>
+    <text x="646" y="334" class="hand small">Color config</text>
+    <rect x="638" y="345" width="70" height="12" rx="4" fill="#dcfce7" stroke="none"/>
+    <text x="642" y="355" class="hand" font-size="9" fill="#166534">TypeScript</text>
+  </g>
+
+  <!-- ====== External repos (outside vault) ====== -->
+  <g filter="url(#sketch)">
+    <rect x="60" y="400" width="340" height="72" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="155" y="423" class="hand title" fill="#c2410c">🔗 External Repos (outside vault)</text>
+    <text x="80" y="445" class="hand small">~/Workspace/project-a/  →  CLAUDE.md</text>
+    <text x="80" y="460" class="hand small">~/Workspace/project-b/  →  CLAUDE.md</text>
+  </g>
+
+  <!-- ====== Arrows ====== -->
+  <!-- External repos → Agents symlink -->
+  <line x1="230" y1="400" x2="230" y2="375" stroke="#f97316" stroke-width="1.8" marker-end="url(#arrowhead)" filter="url(#sketch)"/>
+  <text x="240" y="393" class="hand" font-size="10" fill="#ea580c" filter="url(#sketch)">symlink</text>
+
+  <!-- Plugin → Agents -->
+  <path d="M630,310 C580,310 450,330 400,310" stroke="#22c55e" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,3" filter="url(#sketch)"/>
+  <text x="510" y="305" class="hand" font-size="10" fill="#16a34a" filter="url(#sketch)">manages</text>
+
+  <!-- Brain → Agents coordination line -->
+  <path d="M200,205 C220,220 180,240 170,235" stroke="#8b5cf6" stroke-width="1.5" fill="none" marker-end="url(#arrowPurple)" stroke-dasharray="5,3" filter="url(#sketch)"/>
+  <text x="198" y="225" class="hand" font-size="10" fill="#7c3aed" filter="url(#sketch)">coordinates</text>
+</svg>

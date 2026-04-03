@@ -1,0 +1,8 @@
+[
+  { "path": "Agents/neox3", "color": "#dfab01", "cascade": true },
+  { "path": "Brain", "color": "#ff6b6b", "cascade": true },
+  { "path": "Clippings", "color": "#1c7ed6", "cascade": true },
+  { "path": "Output", "color": "#0ca678", "cascade": true },
+  { "path": "Skills", "color": "#9065b0", "cascade": true },
+  { "path": "Agents", "color": "#495057", "cascade": false }
+]
