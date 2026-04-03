@@ -103,6 +103,7 @@ export default class OhMyBrainPlugin extends Plugin {
   async onload() {
     await this.loadSettings();
     this.migrateAgentColors();
+    this.hidePluginSourceFolder();
 
     this.app.workspace.onLayoutReady(() => this.applyColorStyles());
 
@@ -169,6 +170,21 @@ export default class OhMyBrainPlugin extends Plugin {
 
   onunload() {
     this.clearAllInlineStyles();
+  }
+
+  /** Auto-hide oh-my-brain-plugin folder from Obsidian file explorer via CSS */
+  hidePluginSourceFolder() {
+    const styleId = "omb-hide-plugin-source";
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.textContent = `
+        [data-path="oh-my-brain-plugin"], [data-path^="oh-my-brain-plugin/"],
+        [data-path="assets"], [data-path^="assets/"]
+        { display: none !important; }
+      `;
+      document.head.appendChild(style);
+    }
   }
 
   async loadSettings() {
