@@ -377,9 +377,9 @@ def build_local_plugins(force: bool = False, skip_build: bool = False) -> list[s
             continue
 
         try:
-            # Run npm install
+            # Run npm install (use public registry to avoid corporate proxy issues)
             result = subprocess.run(
-                ["npm", "install"],
+                ["npm", "install", "--registry", "https://registry.npmmirror.com"],
                 cwd=source_dir,
                 capture_output=True,
                 text=True,
