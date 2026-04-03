@@ -769,15 +769,23 @@ def main() -> int:
         # Step 3a: required remote plugins (auto-install)
         required_remote_installed = install_required_remote_plugins(force=args.force)
 
-        # Step 3b: optional remote plugins (interactive)
-        chosen = select_optional_remote_plugins()
-        for plugin in chosen:
-            if install_remote_plugin(plugin, force=args.force):
-                optional_remote_installed.append(plugin["plugin_id"])
-        optional_remote_skipped = [
-            p["plugin_id"] for p in get_optional_remote_plugins()
-            if p["plugin_id"] not in optional_remote_installed
-        ]
+        # Check if any required plugin (local or remote) failed
+        local_failed = [p for p in LOCAL_PLUGINS if p["plugin_id"] not in local_installed]
+        required_remote_failed = [p for p in get_required_remote_plugins() if p["plugin_id"] not in required_remote_installed]
+
+        if local_failed or required_remote_failed:
+            log_warn("Some required plugins failed to install. Skipping optional plugins.")
+            optional_remote_skipped = [p["plugin_id"] for p in get_optional_remote_plugins()]
+        else:
+            # Step 3b: optional remote plugins (interactive)
+            chosen = select_optional_remote_plugins()
+            for plugin in chosen:
+                if install_remote_plugin(plugin, force=args.force):
+                    optional_remote_installed.append(plugin["plugin_id"])
+            optional_remote_skipped = [
+                p["plugin_id"] for p in get_optional_remote_plugins()
+                if p["plugin_id"] not in optional_remote_installed
+            ]
 
     # Register all installed plugins
     all_installed = local_installed + required_remote_installed + optional_remote_installed
